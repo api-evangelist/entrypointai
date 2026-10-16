@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/entrypointai/main/json-schema/entrypointai-put-v1-v1-id-request-schema.json",
+  "title": "PutV1V1IdRequest",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PutV1V1IdRequest",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "unique identifier of the website (the website will always and only have 1 banner so use the website id)"
+    },
+    "account_id": {
+      "type": "string",
+      "description": "unique identifier of the account"
+    },
+    "website_id": {
+      "type": "string",
+      "description": "unique identifier of the website"
+    },
+    "theme_id": {
+      "type": "string",
+      "description": "unique identifier for the custom theme, if theme_id is nil then default_theme is used"
+    },
+    "position": {
+      "type": "string",
+      "description": "position of the Banner*"
+    },
+    "default_theme": {
+      "type": "string",
+      "description": "name of the default theme to be used"
+    },
+    "display_style": {
+      "type": "string",
+      "description": "style of the banner*"
+    },
+    "size": {
+      "type": "string",
+      "description": "size of the banner*"
+    },
+    "personalized_content": {
+      "type": "boolean",
+      "description": "does the website have content personalized for the user?"
+    },
+    "running_targeted_advertising": {
+      "type": "boolean",
+      "description": "are there targeted advertisements on the website?"
+    },
+    "share_data_to_3rd_party": {
+      "type": "boolean",
+      "description": "does the Website share data with third parties?"
+    },
+    "selected_languages": {
+      "type": "array",
+      "description": "languages the banner will auto display in based on region"
+    },
+    "regions": {
+      "type": "object",
+      "description": "region specific settings"
+    }
+  },
+  "required": [
+    "id",
+    "account_id",
+    "website_id"
+  ]
+}

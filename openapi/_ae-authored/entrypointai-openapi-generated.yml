@@ -1,0 +1,585 @@
+openapi: 3.1.0
+info:
+  title: Entry Point AI API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 9 operation(s) read from 13 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Entry Point AI has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 13
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.termly.io/endpoints/banners-get
+  - https://docs.termly.io/endpoints/cookies-get
+  - https://docs.termly.io/endpoints/trigger-scan
+  - https://docs.termly.io/endpoints/document-preview
+  - https://docs.termly.io/endpoints/scan-reports-get
+  - https://docs.termly.io/endpoints/collaborators-get
+  - https://docs.termly.io/endpoints/publish-cookie-policy
+  - https://docs.termly.io/endpoints/custom-consent-themes-get
+  - https://docs.termly.io/endpoints/banners-put
+  - https://docs.termly.io/endpoints/collaborators-put
+  - https://docs.termly.io/endpoints/collaborators-post
+  - https://docs.termly.io/endpoints/collaborators-delete
+  - https://docs.termly.io/endpoints/cookies-put
+servers:
+- url: https://api.termly.io
+paths:
+  /v1/collaborators:
+    delete:
+      operationId: delete_v1_collaborators
+      tags:
+      - Collaborators
+      summary: Delete 1 or more collaborators.
+      description: The DELETE endpoint removes one or more collaborators specified via the `query` parameter. The response is an array where each
+        element corresponds to a request object, containing either success fields (`id`, `account_id`, `_idx`) or an `error` field with `_idx`.
+      x-source: https://docs.termly.io/endpoints/collaborators-delete
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 'URL‑encoded JSON array of objects each containing at least an "account_id" and optionally an "id". Example: [{"account_id":"acct_1234","id":"col_1234"}]'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteV1CollaboratorsResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_v1_collaborators
+      tags:
+      - Collaborators
+      summary: Retrieve all or some of the collaborators for the specified query.
+      description: 'The response has the shape: { "results" : [], "errors" : [], "paging" : {} }. Each result object contains fields such as id,
+        account_id, email, first_name, last_name, invitation_url, invitation_status, role, and website_ids as documented.'
+      x-source: https://docs.termly.io/endpoints/collaborators-get
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 'A URL‑encoded JSON array describing the query. Example: [{"account_id":"acct_1234","ids":["col_12","col_34"]}]'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1CollaboratorsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_v1_collaborators
+      tags:
+      - Collaborators
+      summary: Create one or more collaborators.
+      description: Create one or more collaborators by posting an array of collaborator objects.
+      x-source: https://docs.termly.io/endpoints/collaborators-post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1CollaboratorsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1CollaboratorsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/websites/cookies:
+    put:
+      operationId: put_v1_websites_cookies
+      tags:
+      - Websites
+      summary: Updates cookies.
+      description: Updates cookies. The request body is an array of cookie objects. At least one object with the fields account_id and website_id
+        is required. The response returns an array with the updated cookie identifiers and optional error objects.
+      x-source: https://docs.termly.io/endpoints/cookies-put
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutV1WebsitesCookiesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1WebsitesCookiesResponse'
+      x-evidence:
+        kind: documentation
+  /v1/websites/documents/publish_cookie_policies:
+    post:
+      operationId: post_v1_websites_documents_publish_cookie_policies
+      tags:
+      - Websites
+      summary: Publish Cookie Policy
+      description: When information in the cookie policy is changed it needs to be republished.
+      x-source: https://docs.termly.io/endpoints/publish-cookie-policy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1WebsitesDocumentsPublishCookiePoliciesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1WebsitesDocumentsPublishCookiePoliciesResponse'
+      x-evidence:
+        kind: documentation
+  /v1/websites/documents/{documentid}:
+    get:
+      operationId: get_v1_websites_documents_documentid
+      tags:
+      - Websites
+      summary: Preview the documents for a website.
+      description: 'The response will look like: { "results" : [], "errors" : [], "paging" : {} }. Each result object contains: account_id (string),
+        website_id (string), id (string), name (string), document (string), code_snippet (string|null).'
+      x-source: https://docs.termly.io/endpoints/document-preview
+      parameters:
+      - name: documentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: URL‑encoded JSON array of request objects. Each object must contain an account_id and website_id, and may include ids (array
+          of document ids) and lang (locale). At least one object with an account_id is required. If ids is omitted all documents for the website
+          are returned; if provided it must contain one or more items.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1WebsitesDocumentsDocumentidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at documentId
+  /v1/websites/trigger_scan:
+    post:
+      operationId: post_v1_websites_trigger_scan
+      tags:
+      - Websites
+      summary: Trigger scan of one or more websites
+      description: POST request to trigger scans for one or more websites. The request body is an array of objects each containing account_id,
+        website_id, and optional scan_type. The response is an array of objects indicating success (with report_id) or error for each input.
+      x-source: https://docs.termly.io/endpoints/trigger-scan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1WebsitesTriggerScanRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1WebsitesTriggerScanResponse'
+      x-evidence:
+        kind: documentation
+  /v1/websites/{websiteid}:
+    get:
+      operationId: get_v1_websites_websiteid
+      tags:
+      - Websites
+      summary: Read (GET)
+      description: Retrieve all banners for the specified query. The query must be URL encoded and passed as the query parameter.
+      x-source: https://docs.termly.io/endpoints/banners-get
+      parameters:
+      - name: websiteid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: URL‑encoded JSON array describing the account_id and optional ids to retrieve banners for.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1WebsitesWebsiteidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 4 example path(s) differing only at websiteId
+  /v1/{v1id}:
+    put:
+      operationId: put_v1_v1id
+      tags:
+      - Api
+      summary: Updates the banner for a website.
+      description: 'The response will contain the full list of objects that were PUT including, but not limited to: { "id" : " <string> " , "website_id"
+        : " <string> " , "_idx" : " <string> " }'
+      x-source: https://docs.termly.io/endpoints/banners-put
+      parameters:
+      - name: v1id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutV1V1IdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1V1IdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at v1Id
+components:
+  schemas:
+    DeleteV1CollaboratorsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Collaborator identifier (present on successful deletion).
+        account_id:
+          type: string
+          description: Account identifier (present on successful deletion).
+        _idx:
+          type: integer
+          description: Index of the object in the original request array.
+        error:
+          type: string
+          description: Error code when deletion fails for that object.
+    GetV1CollaboratorsResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Array of collaborator objects.
+        errors:
+          type: array
+          description: Array of error objects.
+        paging:
+          type: object
+          description: Paging information indicating if more results are available.
+    PostV1CollaboratorsRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: Unique identifier of the account which owns the collaborator.
+        email:
+          type: string
+          description: Email address of the collaborator.
+        role:
+          type: string
+          description: One of the following values - admin or editor.
+        website_ids:
+          type: array
+          description: Array of website unique identifiers. This field is only provided if the role is editor.
+      required:
+      - account_id
+      - email
+      - role
+    PostV1CollaboratorsResponse:
+      type: object
+      properties:
+        _idx:
+          type: integer
+          description: Index in the original array of objects posted.
+        id:
+          type: string
+          description: Unique identifier of the collaborator.
+        account_id:
+          type: string
+          description: Unique identifier of the account which owns the collaborator.
+        email:
+          type: string
+          description: Email address of the collaborator.
+        first_name:
+          type: string
+          description: Given name of the collaborator if provided.
+        last_name:
+          type: string
+          description: Surname of the collaborator if provided.
+        invitation_url:
+          type: string
+          description: URL sent to the collaborator to activate their account; null if accepted.
+        invitation_status:
+          type: string
+          description: Indicates whether the invite has been accepted (pending or accepted).
+        role:
+          type: string
+          description: One of the following values - admin or editor.
+        website_ids:
+          type: array
+          description: Array of website unique identifiers; only provided if the role is editor.
+        error:
+          type: string
+          description: Error code when a collaborator cannot be created.
+        validation_errors:
+          type: array
+          description: Array of validation error objects when the error is a validation error.
+    PutV1WebsitesCookiesRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: the unique identifier of the account
+        category:
+          type: string
+          description: the cookie category
+        country:
+          type: string
+          description: the country that sourced the cookie, based on a geoip lookup
+        domain:
+          type: string
+          description: the domain of the cookie
+        de:
+          type: string
+          description: the description in German
+        en_uk:
+          type: string
+          description: the description in UK English
+        en_us:
+          type: string
+          description: the description in US English
+        fr:
+          type: string
+          description: the description in French
+        id:
+          type: string
+          description: the unique identifier of the cookie
+        initiator:
+          type: string
+          description: the url that sourced the cookie
+        name:
+          type: string
+          description: the name of the cookie
+        service:
+          type: string
+          description: a value indicating the service that soured the cookie
+        service_policy_link:
+          type: string
+          description: a link to the servie policy of the website
+        source:
+          type: string
+          description: the source of the cookie
+        tracker_type:
+          type: string
+          description: one of http_cookie , html_local_storage , html_session_storage , server_cookie , pixel_tracker , indexed_db
+        url:
+          type: string
+          description: the url of the cookie
+        value:
+          type: string
+          description: the cookie value
+        website_id:
+          type: string
+          description: the unique identifier of the website
+      required:
+      - account_id
+      - website_id
+    PutV1WebsitesCookiesResponse:
+      type: object
+      properties:
+        account_id:
+          type: string
+        id:
+          type: string
+        website_id:
+          type: string
+        _idx:
+          type: integer
+        error:
+          type: string
+          description: present if an object could not be updated
+        validation_errors:
+          type: object
+          description: present if the error is a validation error
+    PostV1WebsitesDocumentsPublishCookiePoliciesRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: account identifier
+        website_id:
+          type: string
+          description: website identifier
+      required:
+      - account_id
+      - website_id
+    PostV1WebsitesDocumentsPublishCookiePoliciesResponse:
+      type: object
+      properties:
+        account_id:
+          type: string
+        website_id:
+          type: string
+        _idx:
+          type: integer
+    GetV1WebsitesDocumentsDocumentidResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Array of document preview objects.
+        errors:
+          type: array
+          description: Array of error objects, if any.
+        paging:
+          type: object
+          description: Paging information indicating if more results are available.
+    PostV1WebsitesTriggerScanRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: Unique identifier of the account which owns the website.
+        website_id:
+          type: string
+          description: Unique identifier of website to scan.
+        scan_type:
+          type: string
+          description: Type of scan to run. Default is all_pages. one_page scans only the first page; all_pages scans all pages.
+      required:
+      - account_id
+      - website_id
+    PostV1WebsitesTriggerScanResponse:
+      type: object
+      properties:
+        _idx:
+          type: integer
+          description: Index in the original array of objects posted.
+        account_id:
+          type: string
+          description: Unique identifier of the account which owns the website.
+        website_id:
+          type: string
+          description: Unique identifier of website to scan.
+        report_id:
+          type: string
+          description: Unique identifier of the scan report (present on success).
+        error:
+          type: string
+          description: Error code when a website cannot be scanned.
+        validation_errors:
+          type: object
+          description: Validation error details (present when the error is a validation error).
+    GetV1WebsitesWebsiteidResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Array of banner objects.
+        errors:
+          type: array
+          description: Array of error objects.
+        paging:
+          type: object
+          description: Paging information with next_results and previous_results.
+    PutV1V1IdRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique identifier of the website (the website will always and only have 1 banner so use the website id)
+        account_id:
+          type: string
+          description: unique identifier of the account
+        website_id:
+          type: string
+          description: unique identifier of the website
+        theme_id:
+          type: string
+          description: unique identifier for the custom theme, if theme_id is nil then default_theme is used
+        position:
+          type: string
+          description: position of the Banner*
+        default_theme:
+          type: string
+          description: name of the default theme to be used
+        display_style:
+          type: string
+          description: style of the banner*
+        size:
+          type: string
+          description: size of the banner*
+        personalized_content:
+          type: boolean
+          description: does the website have content personalized for the user?
+        running_targeted_advertising:
+          type: boolean
+          description: are there targeted advertisements on the website?
+        share_data_to_3rd_party:
+          type: boolean
+          description: does the Website share data with third parties?
+        selected_languages:
+          type: array
+          description: languages the banner will auto display in based on region
+        regions:
+          type: object
+          description: region specific settings
+      required:
+      - id
+      - account_id
+      - website_id
+    PutV1V1IdResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique identifier of the website
+        website_id:
+          type: string
+          description: unique identifier of the website
+        _idx:
+          type: string
+  securitySchemes:
+    API_Key:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://docs.termly.io/introduction/authentication/
+tags:
+- name: Api
+- name: Collaborators
+- name: Websites
+security:
+- API_Key: []

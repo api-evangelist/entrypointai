@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/entrypointai/main/json-schema/entrypointai-post-v1-collaborators-response-schema.json",
+  "title": "PostV1CollaboratorsResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1CollaboratorsResponse",
+  "type": "object",
+  "properties": {
+    "_idx": {
+      "type": "integer",
+      "description": "Index in the original array of objects posted."
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the collaborator."
+    },
+    "account_id": {
+      "type": "string",
+      "description": "Unique identifier of the account which owns the collaborator."
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address of the collaborator."
+    },
+    "first_name": {
+      "type": "string",
+      "description": "Given name of the collaborator if provided."
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Surname of the collaborator if provided."
+    },
+    "invitation_url": {
+      "type": "string",
+      "description": "URL sent to the collaborator to activate their account; null if accepted."
+    },
+    "invitation_status": {
+      "type": "string",
+      "description": "Indicates whether the invite has been accepted (pending or accepted)."
+    },
+    "role": {
+      "type": "string",
+      "description": "One of the following values - admin or editor."
+    },
+    "website_ids": {
+      "type": "array",
+      "description": "Array of website unique identifiers; only provided if the role is editor."
+    },
+    "error": {
+      "type": "string",
+      "description": "Error code when a collaborator cannot be created."
+    },
+    "validation_errors": {
+      "type": "array",
+      "description": "Array of validation error objects when the error is a validation error."
+    }
+  }
+}

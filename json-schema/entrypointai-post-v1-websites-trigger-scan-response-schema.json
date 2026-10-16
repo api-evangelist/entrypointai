@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/entrypointai/main/json-schema/entrypointai-post-v1-websites-trigger-scan-response-schema.json",
+  "title": "PostV1WebsitesTriggerScanResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1WebsitesTriggerScanResponse",
+  "type": "object",
+  "properties": {
+    "_idx": {
+      "type": "integer",
+      "description": "Index in the original array of objects posted."
+    },
+    "account_id": {
+      "type": "string",
+      "description": "Unique identifier of the account which owns the website."
+    },
+    "website_id": {
+      "type": "string",
+      "description": "Unique identifier of website to scan."
+    },
+    "report_id": {
+      "type": "string",
+      "description": "Unique identifier of the scan report (present on success)."
+    },
+    "error": {
+      "type": "string",
+      "description": "Error code when a website cannot be scanned."
+    },
+    "validation_errors": {
+      "type": "object",
+      "description": "Validation error details (present when the error is a validation error)."
+    }
+  }
+}

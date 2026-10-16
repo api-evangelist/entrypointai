@@ -1,0 +1,16 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.termly.io/introduction/authentication/
+sources:
+- https://docs.termly.io/introduction/authentication/
+- https://docs.entrypointai.com/getting-started/introduction.md
+- https://docs.entrypointai.com/getting-started/quickstart.md
+- https://docs.entrypointai.com/getting-started/quickstart
+description: Authentication schemes for Entry Point AI (as documented).
+schemes:
+- type: apiKey
+  name: API Key
+  evidence: The Termly API uses API keys to authenticate requests.
+  how_to_obtain: Keys are issued manually; contact https://termly.io/agencies/ to get access.
+docs: https://docs.termly.io/introduction/authentication/

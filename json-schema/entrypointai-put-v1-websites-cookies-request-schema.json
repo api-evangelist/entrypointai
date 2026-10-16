@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/entrypointai/main/json-schema/entrypointai-put-v1-websites-cookies-request-schema.json",
+  "title": "PutV1WebsitesCookiesRequest",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PutV1WebsitesCookiesRequest",
+  "type": "object",
+  "properties": {
+    "account_id": {
+      "type": "string",
+      "description": "the unique identifier of the account"
+    },
+    "category": {
+      "type": "string",
+      "description": "the cookie category"
+    },
+    "country": {
+      "type": "string",
+      "description": "the country that sourced the cookie, based on a geoip lookup"
+    },
+    "domain": {
+      "type": "string",
+      "description": "the domain of the cookie"
+    },
+    "de": {
+      "type": "string",
+      "description": "the description in German"
+    },
+    "en_uk": {
+      "type": "string",
+      "description": "the description in UK English"
+    },
+    "en_us": {
+      "type": "string",
+      "description": "the description in US English"
+    },
+    "fr": {
+      "type": "string",
+      "description": "the description in French"
+    },
+    "id": {
+      "type": "string",
+      "description": "the unique identifier of the cookie"
+    },
+    "initiator": {
+      "type": "string",
+      "description": "the url that sourced the cookie"
+    },
+    "name": {
+      "type": "string",
+      "description": "the name of the cookie"
+    },
+    "service": {
+      "type": "string",
+      "description": "a value indicating the service that soured the cookie"
+    },
+    "service_policy_link": {
+      "type": "string",
+      "description": "a link to the servie policy of the website"
+    },
+    "source": {
+      "type": "string",
+      "description": "the source of the cookie"
+    },
+    "tracker_type": {
+      "type": "string",
+      "description": "one of http_cookie , html_local_storage , html_session_storage , server_cookie , pixel_tracker , indexed_db"
+    },
+    "url": {
+      "type": "string",
+      "description": "the url of the cookie"
+    },
+    "value": {
+      "type": "string",
+      "description": "the cookie value"
+    },
+    "website_id": {
+      "type": "string",
+      "description": "the unique identifier of the website"
+    }
+  },
+  "required": [
+    "account_id",
+    "website_id"
+  ]
+}

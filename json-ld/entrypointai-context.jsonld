@@ -1,0 +1,200 @@
+{
+  "@context": {
+    "@vocab": "https://entrypointai.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "entrypointai": "https://entrypointai.com/schema#",
+    "DeleteV1CollaboratorsResponse": "entrypointai:DeleteV1CollaboratorsResponse",
+    "id": {
+      "@id": "entrypointai:id",
+      "@type": "xsd:string"
+    },
+    "account_id": {
+      "@id": "entrypointai:account_id",
+      "@type": "xsd:string"
+    },
+    "_idx": {
+      "@id": "entrypointai:_idx",
+      "@type": "xsd:integer"
+    },
+    "error": {
+      "@id": "entrypointai:error",
+      "@type": "xsd:string"
+    },
+    "GetV1CollaboratorsResponse": "entrypointai:GetV1CollaboratorsResponse",
+    "results": {
+      "@id": "entrypointai:results",
+      "@container": "@list"
+    },
+    "errors": {
+      "@id": "entrypointai:errors",
+      "@container": "@list"
+    },
+    "paging": {
+      "@id": "entrypointai:paging"
+    },
+    "PostV1CollaboratorsRequest": "entrypointai:PostV1CollaboratorsRequest",
+    "email": {
+      "@id": "entrypointai:email",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "entrypointai:role",
+      "@type": "xsd:string"
+    },
+    "website_ids": {
+      "@id": "entrypointai:website_ids",
+      "@container": "@list"
+    },
+    "PostV1CollaboratorsResponse": "entrypointai:PostV1CollaboratorsResponse",
+    "first_name": {
+      "@id": "entrypointai:first_name",
+      "@type": "xsd:string"
+    },
+    "last_name": {
+      "@id": "entrypointai:last_name",
+      "@type": "xsd:string"
+    },
+    "invitation_url": {
+      "@id": "entrypointai:invitation_url",
+      "@type": "xsd:string"
+    },
+    "invitation_status": {
+      "@id": "entrypointai:invitation_status",
+      "@type": "xsd:string"
+    },
+    "validation_errors": {
+      "@id": "entrypointai:validation_errors",
+      "@container": "@list"
+    },
+    "PutV1WebsitesCookiesRequest": "entrypointai:PutV1WebsitesCookiesRequest",
+    "category": {
+      "@id": "entrypointai:category",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "entrypointai:country",
+      "@type": "xsd:string"
+    },
+    "domain": {
+      "@id": "entrypointai:domain",
+      "@type": "xsd:string"
+    },
+    "de": {
+      "@id": "entrypointai:de",
+      "@type": "xsd:string"
+    },
+    "en_uk": {
+      "@id": "entrypointai:en_uk",
+      "@type": "xsd:string"
+    },
+    "en_us": {
+      "@id": "entrypointai:en_us",
+      "@type": "xsd:string"
+    },
+    "fr": {
+      "@id": "entrypointai:fr",
+      "@type": "xsd:string"
+    },
+    "initiator": {
+      "@id": "entrypointai:initiator",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "entrypointai:name",
+      "@type": "xsd:string"
+    },
+    "service": {
+      "@id": "entrypointai:service",
+      "@type": "xsd:string"
+    },
+    "service_policy_link": {
+      "@id": "entrypointai:service_policy_link",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "entrypointai:source",
+      "@type": "xsd:string"
+    },
+    "tracker_type": {
+      "@id": "entrypointai:tracker_type",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "entrypointai:url",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "entrypointai:value",
+      "@type": "xsd:string"
+    },
+    "website_id": {
+      "@id": "entrypointai:website_id",
+      "@type": "xsd:string"
+    },
+    "PutV1WebsitesCookiesResponse": "entrypointai:PutV1WebsitesCookiesResponse",
+    "PostV1WebsitesDocumentsPublishCookiePoliciesRequest": "entrypointai:PostV1WebsitesDocumentsPublishCookiePoliciesRequest",
+    "PostV1WebsitesDocumentsPublishCookiePoliciesResponse": "entrypointai:PostV1WebsitesDocumentsPublishCookiePoliciesResponse",
+    "GetV1WebsitesDocumentsDocumentidResponse": "entrypointai:GetV1WebsitesDocumentsDocumentidResponse",
+    "PostV1WebsitesTriggerScanRequest": "entrypointai:PostV1WebsitesTriggerScanRequest",
+    "scan_type": {
+      "@id": "entrypointai:scan_type",
+      "@type": "xsd:string"
+    },
+    "PostV1WebsitesTriggerScanResponse": "entrypointai:PostV1WebsitesTriggerScanResponse",
+    "report_id": {
+      "@id": "entrypointai:report_id",
+      "@type": "xsd:string"
+    },
+    "GetV1WebsitesWebsiteidResponse": "entrypointai:GetV1WebsitesWebsiteidResponse",
+    "PutV1V1IdRequest": "entrypointai:PutV1V1IdRequest",
+    "theme_id": {
+      "@id": "entrypointai:theme_id",
+      "@type": "xsd:string"
+    },
+    "position": {
+      "@id": "entrypointai:position",
+      "@type": "xsd:string"
+    },
+    "default_theme": {
+      "@id": "entrypointai:default_theme",
+      "@type": "xsd:string"
+    },
+    "display_style": {
+      "@id": "entrypointai:display_style",
+      "@type": "xsd:string"
+    },
+    "size": {
+      "@id": "entrypointai:size",
+      "@type": "xsd:string"
+    },
+    "personalized_content": {
+      "@id": "entrypointai:personalized_content",
+      "@type": "xsd:boolean"
+    },
+    "running_targeted_advertising": {
+      "@id": "entrypointai:running_targeted_advertising",
+      "@type": "xsd:boolean"
+    },
+    "share_data_to_3rd_party": {
+      "@id": "entrypointai:share_data_to_3rd_party",
+      "@type": "xsd:boolean"
+    },
+    "selected_languages": {
+      "@id": "entrypointai:selected_languages",
+      "@container": "@list"
+    },
+    "regions": {
+      "@id": "entrypointai:regions"
+    },
+    "PutV1V1IdResponse": "entrypointai:PutV1V1IdResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Entry Point AI API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Entry Point AI's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-16) from openapi/_ae-authored/entrypointai-openapi-generated.yml.",
+  "dcterms:created": "2026-10-16",
+  "dcterms:source": [
+    "openapi/_ae-authored/entrypointai-openapi-generated.yml"
+  ]
+}

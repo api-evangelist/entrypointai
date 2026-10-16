@@ -1,0 +1,83 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/entrypointai-openapi-generated.yml
+vocabulary:
+  name: Entry Point AI Domain Vocabulary
+  description: 'Terms declared by Entry Point AI''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-16'
+  terms:
+  - term: DeleteV1CollaboratorsResponse
+    definition: 'Object declared by the contract with fields: id, account_id, _idx, error.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/DeleteV1CollaboratorsResponse
+  - term: GetV1CollaboratorsResponse
+    definition: 'Object declared by the contract with fields: results, errors, paging.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/GetV1CollaboratorsResponse
+  - term: PostV1CollaboratorsRequest
+    definition: 'Object declared by the contract with fields: account_id, email, role, website_ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1CollaboratorsRequest
+  - term: PostV1CollaboratorsResponse
+    definition: 'Object declared by the contract with fields: _idx, id, account_id, email, first_name, last_name, invitation_url, invitation_status,
+      role, website_ids, error, validation_errors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1CollaboratorsResponse
+  - term: PutV1WebsitesCookiesRequest
+    definition: 'Object declared by the contract with fields: account_id, category, country, domain, de, en_uk, en_us, fr, id, initiator, name,
+      service. (6 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PutV1WebsitesCookiesRequest
+  - term: PutV1WebsitesCookiesResponse
+    definition: 'Object declared by the contract with fields: account_id, id, website_id, _idx, error, validation_errors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PutV1WebsitesCookiesResponse
+  - term: PostV1WebsitesDocumentsPublishCookiePoliciesRequest
+    definition: 'Object declared by the contract with fields: account_id, website_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1WebsitesDocumentsPublishCookiePoliciesRequest
+  - term: PostV1WebsitesDocumentsPublishCookiePoliciesResponse
+    definition: 'Object declared by the contract with fields: account_id, website_id, _idx.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1WebsitesDocumentsPublishCookiePoliciesResponse
+  - term: GetV1WebsitesDocumentsDocumentidResponse
+    definition: 'Object declared by the contract with fields: results, errors, paging.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/GetV1WebsitesDocumentsDocumentidResponse
+  - term: PostV1WebsitesTriggerScanRequest
+    definition: 'Object declared by the contract with fields: account_id, website_id, scan_type.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1WebsitesTriggerScanRequest
+  - term: PostV1WebsitesTriggerScanResponse
+    definition: 'Object declared by the contract with fields: _idx, account_id, website_id, report_id, error, validation_errors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PostV1WebsitesTriggerScanResponse
+  - term: GetV1WebsitesWebsiteidResponse
+    definition: 'Object declared by the contract with fields: results, errors, paging.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/GetV1WebsitesWebsiteidResponse
+  - term: PutV1V1IdRequest
+    definition: 'Object declared by the contract with fields: id, account_id, website_id, theme_id, position, default_theme, display_style, size,
+      personalized_content, running_targeted_advertising, share_data_to_3rd_party, selected_languages. (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PutV1V1IdRequest
+  - term: PutV1V1IdResponse
+    definition: 'Object declared by the contract with fields: id, website_id, _idx.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/PutV1V1IdResponse

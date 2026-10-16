@@ -1,0 +1,48 @@
+name: Entry Point AI pricing
+generated: '2026-10-16'
+method: searched
+source: https://www.entrypointai.com/pricing/
+audience: developer-api
+pricing_basis: usage-other
+published: true
+plans:
+  - name: Starter
+    price_text: "$49 / month"
+    price: 49
+    currency: USD
+    billing_period: month
+    features:
+      - Up to 5,000 rows
+      - 3 seats
+      - The full toolkit
+    limits: []
+  - name: Growth
+    price_text: "$99 / month"
+    price: 99
+    currency: USD
+    billing_period: month
+    features:
+      - Up to 25,000 rows
+      - 5 seats
+      - Everything in Starter
+    limits: []
+  - name: Pro
+    price_text: "$249 / month"
+    price: 249
+    currency: USD
+    billing_period: month
+    features:
+      - Up to 100,000 rows
+      - 10 seats
+      - Everything in Growth
+      - Premium support
+    limits: []
+  - name: Free
+    price_text: "Free to start"
+    price: 0
+    currency: USD
+    billing_period: month
+    features:
+      - Up to 300 rows
+      - One shared limit
+    limits: []

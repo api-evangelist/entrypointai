@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/entrypointai/main/json-schema/entrypointai-delete-v1-collaborators-response-schema.json",
+  "title": "DeleteV1CollaboratorsResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/entrypointai-openapi-generated.yml#/components/schemas/DeleteV1CollaboratorsResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Collaborator identifier (present on successful deletion)."
+    },
+    "account_id": {
+      "type": "string",
+      "description": "Account identifier (present on successful deletion)."
+    },
+    "_idx": {
+      "type": "integer",
+      "description": "Index of the object in the original request array."
+    },
+    "error": {
+      "type": "string",
+      "description": "Error code when deletion fails for that object."
+    }
+  }
+}
