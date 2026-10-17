@@ -1,0 +1,132 @@
+openapi: 3.2.0
+info:
+  title: Entry Point AI API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 9 operation(s) read from 13 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Entry Point AI has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 13
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.termly.io/endpoints/banners-get
+  - https://docs.termly.io/endpoints/cookies-get
+  - https://docs.termly.io/endpoints/trigger-scan
+  - https://docs.termly.io/endpoints/document-preview
+  - https://docs.termly.io/endpoints/scan-reports-get
+  - https://docs.termly.io/endpoints/collaborators-get
+  - https://docs.termly.io/endpoints/publish-cookie-policy
+  - https://docs.termly.io/endpoints/custom-consent-themes-get
+  - https://docs.termly.io/endpoints/banners-put
+  - https://docs.termly.io/endpoints/collaborators-put
+  - https://docs.termly.io/endpoints/collaborators-post
+  - https://docs.termly.io/endpoints/collaborators-delete
+  - https://docs.termly.io/endpoints/cookies-put
+servers:
+- url: https://api.termly.io
+security:
+- API_Key: []
+tags:
+- name: Entry Point AI API
+paths:
+  /v1/{v1id}:
+    put:
+      operationId: put_v1_v1id
+      tags:
+      - Entry Point AI API
+      summary: Updates the banner for a website
+      description: 'The response will contain the full list of objects that were PUT including, but not limited to: { "id" : " " , "website_id" : " " , "_idx" : " " }'
+      x-source: https://docs.termly.io/endpoints/banners-put
+      parameters:
+      - name: v1id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutV1V1IdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1V1IdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at v1Id
+components:
+  schemas:
+    PutV1V1IdRequest:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique identifier of the website (the website will always and only have 1 banner so use the website id)
+        account_id:
+          type: string
+          description: unique identifier of the account
+        website_id:
+          type: string
+          description: unique identifier of the website
+        theme_id:
+          type: string
+          description: unique identifier for the custom theme, if theme_id is nil then default_theme is used
+        position:
+          type: string
+          description: position of the Banner*
+        default_theme:
+          type: string
+          description: name of the default theme to be used
+        display_style:
+          type: string
+          description: style of the banner*
+        size:
+          type: string
+          description: size of the banner*
+        personalized_content:
+          type: boolean
+          description: does the website have content personalized for the user?
+        running_targeted_advertising:
+          type: boolean
+          description: are there targeted advertisements on the website?
+        share_data_to_3rd_party:
+          type: boolean
+          description: does the Website share data with third parties?
+        selected_languages:
+          type: array
+          description: languages the banner will auto display in based on region
+        regions:
+          type: object
+          description: region specific settings
+      required:
+      - id
+      - account_id
+      - website_id
+    PutV1V1IdResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique identifier of the website
+        website_id:
+          type: string
+          description: unique identifier of the website
+        _idx:
+          type: string
+  securitySchemes:
+    API_Key:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://docs.termly.io/introduction/authentication/

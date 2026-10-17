@@ -1,0 +1,199 @@
+openapi: 3.2.0
+info:
+  title: Entry Point AI Collaborators API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 9 operation(s) read from 13 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Entry Point AI has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 9
+    pages-with-code: 0
+    pages-read: 13
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.termly.io/endpoints/banners-get
+  - https://docs.termly.io/endpoints/cookies-get
+  - https://docs.termly.io/endpoints/trigger-scan
+  - https://docs.termly.io/endpoints/document-preview
+  - https://docs.termly.io/endpoints/scan-reports-get
+  - https://docs.termly.io/endpoints/collaborators-get
+  - https://docs.termly.io/endpoints/publish-cookie-policy
+  - https://docs.termly.io/endpoints/custom-consent-themes-get
+  - https://docs.termly.io/endpoints/banners-put
+  - https://docs.termly.io/endpoints/collaborators-put
+  - https://docs.termly.io/endpoints/collaborators-post
+  - https://docs.termly.io/endpoints/collaborators-delete
+  - https://docs.termly.io/endpoints/cookies-put
+servers:
+- url: https://api.termly.io
+security:
+- API_Key: []
+tags:
+- name: Collaborators
+paths:
+  /v1/collaborators:
+    delete:
+      operationId: delete_v1_collaborators
+      tags:
+      - Collaborators
+      summary: Delete 1 or more collaborators
+      description: The DELETE endpoint removes one or more collaborators specified via the `query` parameter. The response is an array where each element corresponds to a request object, containing either success fields (`id`, `account_id`, `_idx`) or an `error` field with `_idx`.
+      x-source: https://docs.termly.io/endpoints/collaborators-delete
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 'URL‑encoded JSON array of objects each containing at least an "account_id" and optionally an "id". Example: [{"account_id":"acct_1234","id":"col_1234"}]'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteV1CollaboratorsResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_v1_collaborators
+      tags:
+      - Collaborators
+      summary: Retrieve all or some of the collaborators for the specified query
+      description: 'The response has the shape: { "results" : [], "errors" : [], "paging" : {} }. Each result object contains fields such as id, account_id, email, first_name, last_name, invitation_url, invitation_status, role, and website_ids as documented.'
+      x-source: https://docs.termly.io/endpoints/collaborators-get
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 'A URL‑encoded JSON array describing the query. Example: [{"account_id":"acct_1234","ids":["col_12","col_34"]}]'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1CollaboratorsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_v1_collaborators
+      tags:
+      - Collaborators
+      summary: Create one or more collaborators
+      description: Create one or more collaborators by posting an array of collaborator objects.
+      x-source: https://docs.termly.io/endpoints/collaborators-post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1CollaboratorsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1CollaboratorsResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostV1CollaboratorsRequest:
+      type: object
+      properties:
+        account_id:
+          type: string
+          description: Unique identifier of the account which owns the collaborator.
+        email:
+          type: string
+          description: Email address of the collaborator.
+        role:
+          type: string
+          description: One of the following values - admin or editor.
+        website_ids:
+          type: array
+          description: Array of website unique identifiers. This field is only provided if the role is editor.
+      required:
+      - account_id
+      - email
+      - role
+    DeleteV1CollaboratorsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Collaborator identifier (present on successful deletion).
+        account_id:
+          type: string
+          description: Account identifier (present on successful deletion).
+        _idx:
+          type: integer
+          description: Index of the object in the original request array.
+        error:
+          type: string
+          description: Error code when deletion fails for that object.
+    GetV1CollaboratorsResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: Array of collaborator objects.
+        errors:
+          type: array
+          description: Array of error objects.
+        paging:
+          type: object
+          description: Paging information indicating if more results are available.
+    PostV1CollaboratorsResponse:
+      type: object
+      properties:
+        _idx:
+          type: integer
+          description: Index in the original array of objects posted.
+        id:
+          type: string
+          description: Unique identifier of the collaborator.
+        account_id:
+          type: string
+          description: Unique identifier of the account which owns the collaborator.
+        email:
+          type: string
+          description: Email address of the collaborator.
+        first_name:
+          type: string
+          description: Given name of the collaborator if provided.
+        last_name:
+          type: string
+          description: Surname of the collaborator if provided.
+        invitation_url:
+          type: string
+          description: URL sent to the collaborator to activate their account; null if accepted.
+        invitation_status:
+          type: string
+          description: Indicates whether the invite has been accepted (pending or accepted).
+        role:
+          type: string
+          description: One of the following values - admin or editor.
+        website_ids:
+          type: array
+          description: Array of website unique identifiers; only provided if the role is editor.
+        error:
+          type: string
+          description: Error code when a collaborator cannot be created.
+        validation_errors:
+          type: array
+          description: Array of validation error objects when the error is a validation error.
+  securitySchemes:
+    API_Key:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://docs.termly.io/introduction/authentication/

@@ -77,21 +77,21 @@ common:
 
 apis:
 - name: Entry Point AI API
-  description: API for Entry Point AI platform providing model fine‑tuning, data transformation, and deployment endpoints.
+  description: >-
+    API for Entry Point AI platform providing model fine‑tuning, data transformation, and deployment endpoints.
   humanURL: https://docs.entrypointai.com
   baseURL: null
   aid: entrypointai:entry-point-ai-api
-- aid: entrypointai:entrypointai-api
-  name: Entry Point AI API
-  description: 'Entry Point AI API as documented publicly: 9 operations. Contract generated from the documentation by API Evangelist (2026-10-16);
-
-    not the provider''s own document.'
-  humanURL: https://docs.termly.io/endpoints/banners-get
+- aid: entrypointai:entrypointai-collaborators-api
+  name: Entry Point AI Collaborators API
+  description: The Collaborators API from Entry Point AI — 1 operation(s) for collaborators.
+  humanURL: https://docs.entrypointai.com
   baseURL: https://api.termly.io
+  tags:
+  - Collaborators
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/entrypointai-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/entrypointai-collaborators-api-openapi.yml
   - type: JSONSchema
     url: json-schema/entrypointai-put-v1-websites-cookies-request-schema.json
   - type: JSONSchema
@@ -104,7 +104,50 @@ apis:
     url: json-schema/entrypointai-post-v1-collaborators-request-schema.json
   - type: JSONSchema
     url: json-schema/entrypointai-delete-v1-collaborators-response-schema.json
-
+- aid: entrypointai:entrypointai-entry-point-ai-api-api
+  name: Entry Point AI Entry Point AI API
+  description: The Entry Point AI API API from Entry Point AI — 1 operation(s) for entry point ai api.
+  humanURL: https://docs.entrypointai.com
+  baseURL: https://api.termly.io
+  tags:
+  - Entry Point AI API
+  properties:
+  - type: OpenAPI
+    url: openapi/entrypointai-entry-point-ai-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/entrypointai-put-v1-websites-cookies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-put-v1-v1-id-request-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-post-v1-collaborators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-post-v1-websites-trigger-scan-response-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-post-v1-collaborators-request-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-delete-v1-collaborators-response-schema.json
+- aid: entrypointai:entrypointai-websites-api
+  name: Entry Point AI Websites API
+  description: The Websites API from Entry Point AI — 5 operation(s) for websites.
+  humanURL: https://docs.entrypointai.com
+  baseURL: https://api.termly.io
+  tags:
+  - Websites
+  properties:
+  - type: OpenAPI
+    url: openapi/entrypointai-websites-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/entrypointai-put-v1-websites-cookies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-put-v1-v1-id-request-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-post-v1-collaborators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-post-v1-websites-trigger-scan-response-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-post-v1-collaborators-request-schema.json
+  - type: JSONSchema
+    url: json-schema/entrypointai-delete-v1-collaborators-response-schema.json
 x-coverage:
   state: unreadable
   reason: js-rendered-docs

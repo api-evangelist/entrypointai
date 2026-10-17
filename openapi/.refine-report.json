@@ -1,0 +1,22 @@
+{
+  "provider": "entrypointai",
+  "sources": [
+    "_ae-authored/entrypointai-openapi-generated.yml"
+  ],
+  "outputs": [
+    "entrypointai-collaborators-api-openapi.yml",
+    "entrypointai-entry-point-ai-api-api-openapi.yml",
+    "entrypointai-websites-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "entrypointai-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "entrypointai-openapi-generated.yml: tagged paths PUT /v1/{v1id} -> Entry Point AI API",
+    "entrypointai-openapi-generated.yml: declared missing tag: Entry Point AI API",
+    "apis.yml register: written (+3 apis, 4 total)"
+  ],
+  "skipped": []
+}
