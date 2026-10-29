@@ -64,5 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Entry Point AI is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog) and added to the network as a stub for full-pipeline profiling.
-- https://entrypointai.com/
+Entry Point AI provides a platform that enables users to build, fine‑tune, and deploy AI models efficiently. It offers tools for data transformation, synthetic data generation, and model training, all accessible through a unified workflow. The service supports various use cases such as content creation, classification, and predictive analytics, targeting developers and enterprises seeking to integrate AI capabilities without extensive infrastructure overhead.
+
+**Areas:** Artificial Intelligence · Platform · Machine Learning · Data Engineering · Software-as-a-Service
+
+## Entry Point AI on APIs.io
+
+Everything profiled for Entry Point AI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/entrypointai/](https://apis.io/providers/entrypointai/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Entry Point AI API](https://apis.io/apis/entrypointai/entry-point-ai-api/) — API for Entry Point AI platform providing model fine‑tuning, data transformation, and deployment endpoints.
+- [Entry Point AI Collaborators API](https://apis.io/apis/entrypointai/entrypointai-collaborators-api/) — The Collaborators API from Entry Point AI — 1 operation(s) for collaborators.
+- [Entry Point AI Entry Point AI API](https://apis.io/apis/entrypointai/entrypointai-entry-point-ai-api-api/) — The Entry Point AI API API from Entry Point AI — 1 operation(s) for entry point ai api.
+- [Entry Point AI Websites API](https://apis.io/apis/entrypointai/entrypointai-websites-api/) — The Websites API from Entry Point AI — 5 operation(s) for websites.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [DeleteV1CollaboratorsResponse](https://apis.io/schemas/entrypointai/entrypointai-delete-v1-collaborators-response/)
+- [PostV1CollaboratorsRequest](https://apis.io/schemas/entrypointai/entrypointai-post-v1-collaborators-request/)
+- [PostV1CollaboratorsResponse](https://apis.io/schemas/entrypointai/entrypointai-post-v1-collaborators-response/)
+- [PostV1WebsitesTriggerScanResponse](https://apis.io/schemas/entrypointai/entrypointai-post-v1-websites-trigger-scan-response/)
+- [PutV1V1IdRequest](https://apis.io/schemas/entrypointai/entrypointai-put-v1-v1-id-request/)
+- [PutV1WebsitesCookiesRequest](https://apis.io/schemas/entrypointai/entrypointai-put-v1-websites-cookies-request/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Entrypointai Context](https://apis.io/jsonld/entrypointai/entrypointai-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Entry Point AI API Rules](https://apis.io/rules/entrypointai/entrypointai-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Entrypointai Authentication](https://apis.io/security/entrypointai/entrypointai-authentication/)
+- [Entrypointai Domain Security](https://apis.io/security/entrypointai/entrypointai-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Entrypointai Plans Pricing](https://apis.io/plans/entrypointai/entrypointai-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.entrypointai.com/)
+- [Documentation](https://docs.entrypointai.com/)
+- [Getting started](https://www.entrypointai.com/fine-tuning/)
+- [Pricing](https://www.entrypointai.com/pricing/)
+- [Blog](https://www.entrypointai.com/blog/)
+- [Terms of service](https://app.termly.io/document/terms-and-conditions/00d854df-283b-498d-a71f-353e06f4d227)
+- [Privacy policy](https://app.termly.io/document/privacy-policy/cdeae627-2863-40d3-a2b0-715d359efb1a)
+
+## API Evangelist rating
+
+**Kin Score 36.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 26.7 |
+| Contract governance | 22.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 63.2 |
+
+**Agent readiness 15.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/entrypointai/](https://apis.io/providers/entrypointai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Entry Point AI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/entrypointai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
